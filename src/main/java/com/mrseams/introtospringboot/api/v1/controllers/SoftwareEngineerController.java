@@ -42,4 +42,9 @@ public class SoftwareEngineerController {
     public void update(@PathVariable Integer id, @Valid @RequestBody SoftwareEngineerDTO softwareEngineer) {
         softwareEngineerService.updateSoftwareEngineer(id, softwareEngineer);
     }
+
+    @DeleteMapping(value = "{id}")
+    public void delete(@PathVariable Integer id) {
+        softwareEngineerService.deleteSoftwareEngineer(id);
+    }
 }

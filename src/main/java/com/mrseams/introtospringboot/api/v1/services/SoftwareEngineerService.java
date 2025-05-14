@@ -40,4 +40,8 @@ public class SoftwareEngineerService {
             throw new RuntimeException("Software Engineer not found");
         }
     }
+
+    public void deleteSoftwareEngineer(Integer id){
+        SER.deleteById(id);
+    }
 }
