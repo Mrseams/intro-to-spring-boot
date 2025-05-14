@@ -1,17 +1,30 @@
-package com.mrseams.introtospringboot.domains;
+package com.mrseams.introtospringboot.api.v1.domains;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class SoftwareEngineer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private List<String> stack;
+    private String stack;
 
-    public SoftwareEngineer(Integer id, String name, List<String> stack) {
+    public SoftwareEngineer(Integer id, String name, String stack) {
         this.id = id;
         this.name = name;
         this.stack = stack;
+    }
+
+    public SoftwareEngineer() {
+
     }
 
     public Integer getId() {
@@ -22,7 +35,7 @@ public class SoftwareEngineer {
         return name;
     }
 
-    public List<String> getStack() {
+    public String getStack() {
         return stack;
     }
 
@@ -34,7 +47,7 @@ public class SoftwareEngineer {
         this.name = name;
     }
 
-    public void setStack(List<String> stack) {
+    public void setStack(String stack) {
         this.stack = stack;
     }
 
